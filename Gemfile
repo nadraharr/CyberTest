@@ -27,7 +27,7 @@ gem "jbuilder"
 # Gemfile
 gem 'graphql'
 gem 'faraday'
-
+gem 'dotenv-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

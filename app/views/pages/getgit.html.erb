@@ -1,0 +1,15 @@
+<% if !@result["data"].nil? && !@result["data"]["user"].nil? && !@result["data"]["user"]["name"].nil? %>
+
+        <span class="text-success"> <%=  @result["data"]["user"]["name"] %>  </span>  <span> <%= + "'s repositories:" %> </span>
+        </br> </br>  
+        <% array = @result["data"]["user"]["repositories"]["nodes"]%>  
+        <ul>
+        <% array.each do |repo| %> 
+        <li> <%= link_to repo["name"], "#{repo[ "url"]}", target: "_blank" %> </li> 
+        <% end %>  
+        </ul>  
+
+        <% else %>
+        <p class="text-danger"> User Not Found ¯\_(ツ)_/¯ </p>
+
+<% end %>
