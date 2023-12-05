@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#index'
   post "/submit", to: 'pages#getgit'
+  post "/nextpage", to: 'pages#next_page'
+  post "/prevpage", to: 'pages#prev_page'
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end

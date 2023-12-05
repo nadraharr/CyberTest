@@ -1,0 +1,37 @@
+        
+        <span class="text-success"><%= @result["data"]["user"]["name"] %></span><span><%= "'s repositories:" %></span>
+        </br> 
+        <% array = @result["data"]["user"]["repositories"]["nodes"]%>  
+        <ul>
+        <% array.each do |repo| %> 
+        <li> <%= link_to repo["name"], "#{repo[ "url"]}", target: "_blank" %> </li>
+        <% end %>  
+        </ul> 
+        
+         
+        <ul class="pagination">
+        <% if @result["data"]["user"]["repositories"]["pageInfo"]["hasPreviousPage"] == true %>
+        <% user_login = @result["data"]["user"]["login"] %>
+        <% cursor_prev_value = @result["data"]["user"]["repositories"]["pageInfo"]["startCursor"] %>
+        <%= form_tag('/prevpage', method: 'post') do %>
+        <%= hidden_field_tag :user_login, user_login %>
+        <%= hidden_field_tag :cursor_value, cursor_prev_value %>
+        <li class="page-item"><%= submit_tag '<' %></li>
+        <% end %>
+        <% end %>
+
+        <% if @result["data"]["user"]["repositories"]["pageInfo"]["hasNextPage"] == true %>
+        <% user_login = @result["data"]["user"]["login"] %>
+        <% cursor_next_value = @result["data"]["user"]["repositories"]["pageInfo"]["endCursor"] %>
+        <%= form_tag('/nextpage', method: 'post') do %>
+        <%= hidden_field_tag :user_login, user_login %>
+        <%= hidden_field_tag :cursor_value, cursor_next_value %>
+        <li class="page-item"><%= submit_tag '>' %></li>
+        <% end %>
+        <% end %>
+        </ul>
+        
+
+
+       
+        
