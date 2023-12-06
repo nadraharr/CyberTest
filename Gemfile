@@ -31,7 +31,7 @@ gem 'dotenv-rails'
 gem 'faraday'
 gem 'graphql'
 gem 'rubocop', require: false
-gem "pg", "~> 1.1"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -73,3 +73,6 @@ end
 
 gem 'graphiql-rails', group: :development
 
+group :production do
+  gem "pg"
+end
