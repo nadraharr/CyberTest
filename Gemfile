@@ -73,5 +73,5 @@ end
 gem 'graphiql-rails', group: :development
 
 group :production do
-  gem 'pg', '~> 1.5', '>= 1.5.4'
+  gem 'pg'
 end
