@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     end
 
     response = connection.post do |req|
-      req.body = { query: }.to_json
+      req.body = { query: query }.to_json
     end
 
     @result = JSON.parse(response.body)
