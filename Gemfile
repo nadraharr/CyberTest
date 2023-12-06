@@ -75,4 +75,5 @@ gem 'graphiql-rails', group: :development
 
 group :production do
   gem 'pg'
+  gem 'rails'
 end
