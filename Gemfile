@@ -31,6 +31,7 @@ gem 'dotenv-rails'
 gem 'faraday'
 gem 'graphql'
 gem 'rubocop', require: false
+gem 'pg'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -62,7 +63,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
-  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+  
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -72,6 +73,3 @@ end
 
 gem 'graphiql-rails', group: :development
 
-group :production do
-  gem 'pg'
-end
