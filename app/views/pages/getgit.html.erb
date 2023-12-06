@@ -1,7 +1,8 @@
-<% if @result["errors"] %>        
-        <p class="text-danger"> <%= 'User Not Found ¯\_(ツ)_/¯' %> </p>
-<% elsif @result["data"]["user"]["repositories"]["nodes"].empty? %>
-        <p class="text-danger"> <%= 'This User has no Repositories yet!' %> </p>
+
+<% if @result && @result["errors"] %>
+  <p class="text-danger"> <%= 'User Not Found ¯\_(ツ)_/¯' %> </p>
+<% elsif @result && @result["data"]["user"]["repositories"]["nodes"].empty? %>
+  <p class="text-danger"> <%= 'This User has no Repositories yet!' %> </p>
 <% else %>
-        <%= render partial: "page" %>
+  <%= render partial: "page" %>
 <% end %>
