@@ -14,6 +14,5 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  url: <%= ENV['HEROKU_POSTGRESQL_AMBER_URL'] %>
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
